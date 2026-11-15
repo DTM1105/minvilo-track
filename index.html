@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Theo dõi vị trí</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <!-- GitHub Pages không đặt được header; CSP bằng thẻ meta. Script chỉ từ chính trang; gọi mạng chỉ tới Supabase Functions; ảnh chỉ từ ô bản đồ Esri. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://server.arcgisonline.com; connect-src 'self' https://*.supabase.co; base-uri 'none'; form-action 'none'">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <header class="top">
+      <p class="eyebrow">Vị trí được chia sẻ cho bạn</p>
+      <h1 id="title">Đang tải…</h1>
+    </header>
+
+    <section id="banner" class="banner" role="status" hidden></section>
+
+    <section id="mapwrap" class="mapwrap" hidden>
+      <div id="map" aria-label="Bản đồ vị trí"></div>
+    </section>
+
+    <section id="facts" class="facts" hidden>
+      <div class="fact">
+        <span class="fact-label">Cập nhật</span>
+        <span class="fact-value" id="age">—</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Pin</span>
+        <span class="fact-value" id="battery">—</span>
+      </div>
+    </section>
+
+    <section id="message" class="message" hidden>
+      <p id="message-text"></p>
+    </section>
+
+    <footer class="foot">
+      <p>Trang này chỉ để xem. Link tự hết hạn và người chia sẻ có thể huỷ bất cứ lúc nào.</p>
+    </footer>
+  </main>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="config.js"></script>
+  <script src="track.js"></script>
+</body>
+</html>
